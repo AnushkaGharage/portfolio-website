@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <title>Anushka Gharage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-image: url('src/white-texture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            border-radius: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 50px;
+            background-image: url('white-texture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #666;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 0 50px 50px 50px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Profile Image */
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            background: #ddd;
+            margin: 0 auto 40px auto;
+            background-image: url('src/Anushka.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 90%;
+        }
+
+        /* About Section */
+        .about {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .about-text {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        .projects {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .project-card {
+            background: #e8e8e8;
+            padding: 40px 20px;
+            text-align: center;
+            font-weight: 500;
+            color: #333;
+            font-size: 16px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            background: #ddd;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 35px;
+            position: relative;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .timeline-year {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .timeline-content {
+            flex: 1;
+            position: relative;
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .timeline-period {
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .timeline-description {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        /* Timeline connector line */
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            transform: translateX(-50%);
+            top: 5px;
+            width: 2px;
+            height: 130px;
+            background: #8e8b8b;
+        }
+
+        /* Timeline dots */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 71px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        /* Blogs Section */
+        .blogs {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-posts {
+            margin-bottom: 40px;
+        }
+
+        .blog-posts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .blog-posts li {
+            margin-bottom: 10px;
+        }
+
+        .blog-posts a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .blog-posts a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 40px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .contact-email {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 30px;
+            height: 30px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            background: #555;
+        }
+
+        /* In-page Blog View (replaces center content) */
+        .hidden { display: none; }
+
+        #blogView {
+            padding: 0 50px 50px 50px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #blogView .blog-back {
+            display: inline-block;
+            margin: 20px 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            background: #e8e8e8;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        #blogView .blog-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0 20px;
+            text-align: left;
+        }
+
+        #blogContent p { margin: 10px 0; color: #333; }
+        #blogContent h1, #blogContent h2, #blogContent h3 { margin: 16px 0 8px; color: #333; }
+        #blogContent ul { padding-left: 20px; margin: 10px 0; }
+        #blogContent a { color: #333; text-decoration: underline; }
+
+        /* Projects View (similar to blogView) */
+        #projectsView {
+            padding: 0 50px 50px 50px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #projectsView .projects-back {
+            display: inline-block;
+            margin: 20px 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            background: #e8e8e8;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        #projectsView .projects-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0 30px;
+            text-align: center;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-item {
+            background: #e8e8e8;
+            padding: 25px;
+            text-align: left;
+            transition: background 0.3s, transform 0.2s;
+            cursor: pointer;
+            border-left: 4px solid #333;
+        }
+
+        .project-item:hover {
+            background: #ddd;
+            transform: translateY(-2px);
+        }
+
+        .project-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .container {
+                margin: 0;
+            }
+            
+            .header {
+                padding: 30px 20px;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .nav {
+                gap: 30px;
+            }
+            
+            .main-content {
+                padding: 0 20px 30px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title,
+            .contact-title {
+                font-size: 32px;
+            }
+            
+            .profile-image {
+                height: 250px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                gap: 20px;
+            }
+            
+            .timeline-item::after {
+                left: 47px;
+            }
+            
+            .timeline-item:not(:last-child)::before {
+                left: 50px;
+                transform: none;
+            }
+            
+            #blogView, #projectsView { 
+                padding: 0 20px 30px 20px; 
+            }
+
+            .project-item {
+                padding: 20px;
+            }
+
+            .project-name {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">ANUSHKA GHARAGE</div>
+            <tt>
+            <nav class="nav">
+                <a href="#about">About.</a>
+                <a href="#projects">Projects.</a>
+                <a href="#blogs">Blogs.</a>
+                <a href="#contact">Contacts.</a>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <div id="homeView">
+                <div class="hero">
+                    <h1>Hello!<br>I'm Anushka.</h1>
+                    <div class="subtitle">Recent Graduate.</div>
+                </div>
+
+                <div class="profile-image"></div>
+
+                <section class="about" id="about">
+                    <h2 class="section-title">About Me.</h2>
+                    <div class="about-text">
+                        - Recent Computer Science graduate with a strong academic foundation in machine learning, deep learning, and generative AI.
+                        <br> - Known for attention to detail, analytical thinking, and a passion for staying current with emerging AI technologies.
+                        <br> - Eager to contribute to innovative AI-driven products in a collaborative, real-world environment.
+                    </div>
+                </section>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <div class="timeline-period">2021-2025.</div>
+                            <div class="timeline-period">Recent Graduate</div>
+                            <div class="timeline-description">KITCOEK</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <div class="timeline-period">2024-2025.</div>
+                            <div class="timeline-period">AI-ML Intern</div>
+                            <div class="timeline-description">Neugence Technology Pvt. Ltd.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="projects" id="projects">
+                    <h2 class="section-title">Projects.</h2>
+                    <div class="projects-grid">
+                        <div class="project-card internship-projects-btn">Internship Projects</div>
+                        <div class="project-card personal-projects-btn">Personal Projects</div>
+                        <!-- <div class="project-card">Project Three</div>
+                        <div class="project-card">Project Four</div> -->
+                    </div>
+                </section>
+
+                <section class="blogs" id="blogs">
+                    <h2 class="section-title">Blogs.</h2>
+                    <div class="blog-posts">
+                        <ul>
+                            <!-- <li>▪ <a href="how-to-read-research-papers.md">What I Learnt in College</a></li> -->
+                            <li>▪ <a href="blogs/what-i-learnt-in-college.md">What I Learnt in College</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="contact" id="contact">
+                    <h2 class="contact-title">Contacts.</h2>
+                    <a href="mailto:gharageanushka@gmail.com" class="contact-email">gharageanushka@gmail.com</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/anushka-gharage/" title="LinkedIn">in</a>
+                        <a href="https://github.com/AnushkaGharage" title="GitHub">GH</a>
+                    </div>
+                </section>
+            </div>
+
+            <section id="blogView" class="hidden">
+                <a class="blog-back" id="backToHome">← Back</a>
+                <h2 class="blog-title" id="blogTitle"></h2>
+                <div id="blogContent"></div>
+            </section>
+
+            <section id="projectsView" class="hidden">
+                <a class="projects-back" id="backToHomeFromProjects">← Back</a>
+                <h2 class="projects-title">Personal Projects.</h2>
+                <div class="project-list" id="projectList"></div>
+            </section>
+            </tt>
+        </div>
+    </div>
+
+    <script>
+        // Project data - you can easily modify this
+        const personalProjects = [
+            {
+                name: "Blog Generator",
+                technologies: "Python, Langchain, Langgraph, Pydantic, FastAPI",
+                url: "https://github.com/AnushkaGharage/blog-generator"
+            },
+            {
+                name: "Virtual Try-on",
+                technologies: "Python, ComfyUI, Flux Redux, SAM2, Clip Vision",
+               // url: "https://github.com/AnushkaGharage/movie-recommender"
+            },
+         //   {
+         //       name: "GPT-2 Implementation",
+         //       technologies: "Python, TensorFlow, LSTM, Matplotlib",
+         //       url: "https://github.com/AnushkaGharage/stock-predictor"
+         //   },
+            {
+                name: "Fashion Recommendation System",
+                technologies: "Python, TensorFlow, Scikit-learn, Streamlit, Resnet50",
+                url: "https://www.linkedin.com/posts/anushka-gharage_fashionrecommendationsystem-machinelearning-activity-7085960968748335104-NeXf"
+            }
+        ];
+
+        // Smooth scrolling for navigation links (works from blog view too)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const selector = this.getAttribute('href');
+                const target = document.querySelector(selector);
+                const blogViewEl = document.getElementById('blogView');
+                const projectsViewEl = document.getElementById('projectsView');
+                
+                if ((blogViewEl && !blogViewEl.classList.contains('hidden')) || 
+                    (projectsViewEl && !projectsViewEl.classList.contains('hidden'))) {
+                    // If currently in blog or projects view, switch to home first, then scroll
+                    showHomeView(true, false);
+                    setTimeout(() => {
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 0);
+                } else if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add click handlers to project cards (excluding Personal Projects)
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (!card.classList.contains('personal-projects-btn')) {
+                card.addEventListener('click', function() {
+                    console.log(`Clicked on ${this.textContent}`);
+                    // You can add navigation logic here
+                });
+            }
+        });
+
+        // Markdown → HTML (lightweight)
+        function markdownToHtml(md) {
+            if (!md) return '';
+            let html = md
+                .replace(/^###\s+(.+)$/gm, '<h3>$1<\/h3>')
+                .replace(/^##\s+(.+)$/gm, '<h2>$1<\/h2>')
+                .replace(/^#\s+(.+)$/gm, '<h1>$1<\/h1>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1<\/strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1<\/em>')
+                .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1<\/a>');
+
+            const lines = html.split('\n');
+            let inList = false;
+            const output = [];
+            for (const line of lines) {
+                if (/^\s*-\s+/.test(line)) {
+                    if (!inList) {
+                        output.push('<ul>');
+                        inList = true;
+                    }
+                    output.push('<li>' + line.replace(/^\s*-\s+/, '') + '<\/li>');
+                } else {
+                    if (inList) {
+                        output.push('<\/ul>');
+                        inList = false;
+                    }
+                    if (line.trim() === '') {
+                        output.push('');
+                    } else if (/^<h[1-3]>/.test(line)) {
+                        output.push(line);
+                    } else {
+                        output.push('<p>' + line + '<\/p>');
+                    }
+                }
+            }
+            if (inList) output.push('<\/ul>');
+            return output.join('\n');
+        }
+
+        const homeView = document.getElementById('homeView');
+        const blogView = document.getElementById('blogView');
+        const projectsView = document.getElementById('projectsView');
+        const blogTitleEl = document.getElementById('blogTitle');
+        const blogContentEl = document.getElementById('blogContent');
+        const backBtn = document.getElementById('backToHome');
+        const backFromProjectsBtn = document.getElementById('backToHomeFromProjects');
+        const projectListEl = document.getElementById('projectList');
+
+        function showHomeView(replaceState = false, doScrollTop = true) {
+            homeView.classList.remove('hidden');
+            blogView.classList.add('hidden');
+            projectsView.classList.add('hidden');
+            if (replaceState) {
+                history.replaceState({}, '', location.pathname);
+            }
+            document.title = 'Anushka Gharage';
+            if (doScrollTop) {
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            }
+        }
+
+        function showProjectsView(push = true) {
+            homeView.classList.add('hidden');
+            blogView.classList.add('hidden');
+            projectsView.classList.remove('hidden');
+            
+            if (push) {
+                const qs = new URLSearchParams(location.search);
+                qs.set('view', 'projects');
+                history.pushState({ view: 'projects' }, '', `${location.pathname}?${qs.toString()}`);
+            }
+            
+            document.title = 'Personal Projects — Anushka Gharage';
+            
+            // Populate projects
+            projectListEl.innerHTML = '';
+            personalProjects.forEach(project => {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'project-item';
+                projectItem.innerHTML = `
+                    <div class="project-name">${project.name}</div>
+                    <div class="project-tech">${project.technologies}</div>
+                `;
+                projectItem.addEventListener('click', () => {
+                    window.open(project.url, '_blank', 'noopener,noreferrer');
+                });
+                projectListEl.appendChild(projectItem);
+            });
+            
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+
+        function extractTitleFromMarkdown(md) {
+            const match = md.match(/^#\s+(.+)$/m) || md.match(/^##\s+(.+)$/m) || md.match(/^###\s+(.+)$/m);
+            return match ? match[1].trim() : '';
+        }
+
+        function loadBlog(url, push = true) {
+            homeView.classList.add('hidden');
+            blogView.classList.remove('hidden');
+            projectsView.classList.add('hidden');
+            blogTitleEl.textContent = '';
+            blogContentEl.innerHTML = '<p>Loading…<\/p>';
+            if (push) {
+                const qs = new URLSearchParams(location.search);
+                qs.set('post', url);
+                qs.delete('view'); // Remove view param when showing blog
+                history.pushState({ post: url }, '', `${location.pathname}?${qs.toString()}`);
+            }
+            fetch(url)
+                .then(r => {
+                    if (!r.ok) throw new Error('Failed to load blog');
+                    return r.text();
+                })
+                .then(text => {
+                    const derivedTitle = extractTitleFromMarkdown(text);
+                    blogTitleEl.textContent = derivedTitle || 'Blog';
+                    document.title = (derivedTitle ? derivedTitle + ' — ' : '') + 'Anushka Gharage';
+                    blogContentEl.innerHTML = markdownToHtml(text);
+                    window.scrollTo({ top: 0, behavior: 'auto' });
+                })
+                .catch(err => {
+                    console.error(err);
+                    blogTitleEl.textContent = 'Error';
+                    blogContentEl.innerHTML = '<p>Unable to load blog. Please try again later.<\/p>';
+                });
+        }
+
+        // Personal Projects button click handler
+        document.querySelector('.personal-projects-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showProjectsView(true);
+        });
+
+        // Internship Projects button click handler
+        document.querySelector('.internship-projects-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://acehub.ai/profile/gharage_anushka', '_blank', 'noopener,noreferrer');
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (new URLSearchParams(location.search).has('post')) {
+                history.back();
+            } else {
+                showHomeView(true);
+            }
+        });
+
+        backFromProjectsBtn.addEventListener('click', () => {
+            if (new URLSearchParams(location.search).has('view')) {
+                history.back();
+            } else {
+                showHomeView(true);
+            }
+        });
+
+        document.querySelectorAll('.blog-posts a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = link.getAttribute('href');
+                loadBlog(url, true);
+            });
+        });
+
+        window.addEventListener('popstate', () => {
+            const qs = new URLSearchParams(location.search);
+            const post = qs.get('post');
+            const view = qs.get('view');
+            
+            if (post) {
+                loadBlog(post, false);
+            } else if (view === 'projects') {
+                showProjectsView(false);
+            } else {
+                showHomeView(false);
+            }
+        });
+
+        // Initial route on load
+        (function initRoute() {
+            const qs = new URLSearchParams(location.search);
+            const post = qs.get('post');
+            const view = qs.get('view');
+            
+            if (post) {
+                loadBlog(post, false);
+            } else if (view === 'projects') {
+                showProjectsView(false);
+            } else {
+                showHomeView(false);
+            }
+        })();
+    </script>
+</body>
+</html>
